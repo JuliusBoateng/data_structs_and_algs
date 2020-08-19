@@ -4,15 +4,13 @@
 #include <set>
 
 //repeatedly finds the minimum element from the unsorted and puts it into the sorted array. 
-int* createArray(int* unsorted_arr, int length){
+void createArray(int* unsorted_arr, int length){
     for (int i = 0; i < length; i++){
         scanf("%d", &unsorted_arr[i]);
     }
-
-    return unsorted_arr;
 }
 
-int* selectionSort(int* unsorted_arr, int length, int* sorted_arr){
+void selectionSort(int* unsorted_arr, int length, int* sorted_arr){
     std::set <int> indexes; 
 
     for (int x = 0; x < length; x++){
@@ -31,7 +29,6 @@ int* selectionSort(int* unsorted_arr, int length, int* sorted_arr){
         indexes.insert(index);
         sorted_arr[x] = min;
     }
-    return sorted_arr;
 }
 
 void printArray(int* arr, int length){
