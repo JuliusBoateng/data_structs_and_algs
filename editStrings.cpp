@@ -56,8 +56,8 @@ void editStringChecker(std::string str1, std::string str2){
 
 int main(){
 
-    std::string str1 = "pa";
-    std::string str2 = "pale";
+    std::string str1 = "pale";
+    std::string str2 = "bake";
     editStringChecker(str1, str2);
 
     return 0;
