@@ -37,6 +37,8 @@ def binary_search(arr, target):
     right = len(arr) - 1
     count = 1
 
+    print("Iterative")
+
     while left <= right:
         mid = (left + right) // 2
         guess = arr[mid]
@@ -52,17 +54,32 @@ def binary_search(arr, target):
         
         count += 1
 
-    print("Iterative")
     print(f"Searches: {count} Duration: {time.time() - start_time} s")
     print(f"Index: {-1}")
     return -1
 
-def main():
-    arr = list(range(1,100000001))
-    target = 1
+def simple_search(arr, target):
+    start_time  = time.time()
 
-    recursive_binary_search(arr, 33)
-    binary_search(arr, 33)
+    print("Simple Search")
+    for index, val in enumerate(arr):
+        if val == target:
+            print(f"Searches: {index + 1} Duration: {time.time() - start_time} s")
+            print(f"Index: {index}")
+            return index
+        
+        if val > target:
+            print(f"Searches: {index + 1} Duration: {time.time() - start_time} s")
+            print(f"Index: {-1}")
+            return -1
+
+def main():
+    arr = list(range(1, 100_000_001))
+    target = 89_000_000
+
+    recursive_binary_search(arr, target)
+    binary_search(arr, target)
+    simple_search(arr, target)
 
 if __name__ == "__main__":
     main()
